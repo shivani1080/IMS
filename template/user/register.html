@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% block title %}Registration Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid" style="background: linear-gradient(to right, #d8efe5, #d8efe5);">
+<div class="row my-4">
+    <div class="container-fluid" style="background: linear-gradient(to right, #f76a8c, #febe57);">
+        <div class="row mt-3 mb-3">
+          <div class="col-md-12 text-center">
+            <h1 class="text-white">C-DAC Inventory Management System</h1>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-6 offset-md-3">
+        <div class="border p-3 bg-white">
+          
+           <center><h4>REGISTRATION PAGE</h4></center>
+            <hr>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-success" type="submit" value="Register">
+                <input class="btn btn-danger" type="submit" value="confirm-email">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
